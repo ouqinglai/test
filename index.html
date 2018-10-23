@@ -3,22 +3,31 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
 </head>
 <body>
 	123
 </body>
 <script>
-	setTimeout(function (){
-		document.title='yyy1'
-		var setTitleIframe = document.createElement('iframe')
-		setTitleIframe.src = '//www.linshimuye.com/favicon.ico'
-		setTitleIframe.style.display = 'none'
-		setTitleIframe.onload = function() {
-			setTimeout(function(){
-				setTitleIframe.remove()
-			}, 9)
+	$.ajax({
+		url: '/test',
+		async: false,
+		success: function (res){
+			console.log(res)
 		}
-		document.body.appendChild(setTitleIframe)
-	},3000)
+	})
+
+	// fetch('/test').then(res=>res.text()).then(res => {
+	// 	document.title='yyy1'
+	// 	var setTitleIframe = document.createElement('iframe')
+	// 	setTitleIframe.src = '//www.linshimuye.com/favicon.ico'
+	// 	setTitleIframe.style.display = 'none'
+	// 	setTitleIframe.onload = function() {
+	// 		setTimeout(function(){
+	// 			setTitleIframe.remove()
+	// 		}, 9)
+	// 	}
+	// 	document.body.appendChild(setTitleIframe)
+	// })
 </script>
 </html>

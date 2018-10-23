@@ -9,8 +9,16 @@
 </body>
 <script>
 	setTimeout(function (){
-	document.title='yyy1'
-
+		document.title='yyy1'
+		var setTitleIframe = document.createElement('iframe')
+		setTitleIframe.src = '//www.linshimuye.com/favicon.ico'
+		setTitleIframe.style.display = 'none'
+		setTitleIframe.onload = function() {
+			setTimeout(function(){
+				setTitleIframe.remove()
+			}, 9)
+		}
+		document.body.appendChild(setTitleIframe)
 	},3000)
 </script>
 </html>

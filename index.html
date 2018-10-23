@@ -3,31 +3,32 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
 </head>
 <body>
-	123
+	<button onclick="alert(333)">123123</button>
 </body>
 <script>
 	$.ajax({
 		url: '/test',
 		async: false,
 		success: function (res){
-			console.log(res)
+			document.title='yyy1'
+			var setTitleIframe = document.createElement('iframe')
+			setTitleIframe.src = '//www.linshimuye.com/favicon.ico'
+			setTitleIframe.style.display = 'none'
+			setTitleIframe.onload = function() {
+				setTimeout(function(){
+					setTitleIframe.remove()
+				}, 9)
+			}
+			document.body.appendChild(setTitleIframe)
 		}
 	})
 
 	// fetch('/test').then(res=>res.text()).then(res => {
-	// 	document.title='yyy1'
-	// 	var setTitleIframe = document.createElement('iframe')
-	// 	setTitleIframe.src = '//www.linshimuye.com/favicon.ico'
-	// 	setTitleIframe.style.display = 'none'
-	// 	setTitleIframe.onload = function() {
-	// 		setTimeout(function(){
-	// 			setTitleIframe.remove()
-	// 		}, 9)
-	// 	}
-	// 	document.body.appendChild(setTitleIframe)
 	// })
 </script>
 </html>

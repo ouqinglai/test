@@ -11,11 +11,7 @@
 	<button onclick="alert(333)">123123</button>
 </body>
 <script>
-var now = new Date().valueOf();
-setTimeout(function () {
-    if (new Date().valueOf() - now > 100) return;
-    window.location = "baidumap://map/direction?origin=34.264642646862,108.95108518068&destination=40.007623,116.360582&mode=driving&src=yourCompanyName|yourAppName";
-}, 25);
-window.location = "iosamap://path?sourceApplication=applicationName&backScheme=applicationScheme&sid=BGVIS1&slat=39.92848272&slon=116.39560823&sname=A&did=BGVIS2&dlat=39.98848272&dlon=116.47560823&dname=B&dev=0&m=0&t=0";
+	    window.location.href = "iosamap://path?sourceApplication=applicationName&backScheme=applicationScheme&sid=BGVIS1&slat=39.92848272&slon=116.39560823&sname=A&did=BGVIS2&dlat=39.98848272&dlon=116.47560823&dname=B&dev=0&m=0&t=0";
+    setTimeout( function(e){ window.location.href = "baidumap://map/direction?origin=34.264642646862,108.95108518068&destination=40.007623,116.360582&mode=driving&src=yourCompanyName|yourAppName"; },200);
 </script>
 </html>

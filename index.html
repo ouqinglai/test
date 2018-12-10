@@ -6,6 +6,13 @@
 		body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
 	</style>
 	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=IhA9qkrfltVCiGzzGniGd6TN2Q2VxqK1&s=1"></script>
+	<script>
+		(function(){
+			window.HOST_TYPE = "2";
+			window.BMap_loadScriptTime = (new Date).getTime();
+			document.write('\x3Cscript type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&ak=E4805d16520de693a3fe707cdc962045">\x3C/script>');
+		})();
+	</script>
 	<title>IP定位获取当前城市</title>
 </head>
 <body>

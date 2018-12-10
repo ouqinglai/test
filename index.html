@@ -5,7 +5,14 @@
 	<style type="text/css">
 		body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
 	</style>
-	<script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=IhA9qkrfltVCiGzzGniGd6TN2Q2VxqK1"></script>
+	<script>
+		(function(){
+			window.HOST_TYPE = "2";
+			window.BMap_loadScriptTime = (new Date).getTime();
+			document.write('<script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&ak=IhA9qkrfltVCiGzzGniGd6TN2Q2VxqK1"></script>');
+		})();
+	</script>
+	<!-- <script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=IhA9qkrfltVCiGzzGniGd6TN2Q2VxqK1"></script> -->
 	<title>IP定位获取当前城市</title>
 </head>
 <body>

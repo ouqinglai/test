@@ -1,29 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<script src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+	</style>
+	<script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=IhA9qkrfltVCiGzzGniGd6TN2Q2VxqK1"></script>
+	<title>IP定位获取当前城市</title>
 </head>
 <body>
-	<button onclick="test123(333)">123123</button>
+	<div id="allmap"></div>
 </body>
-<script>
-	    window.location.href = "iosamap://path?sourceApplication=applicationName&backScheme=applicationScheme&sid=BGVIS1&slat=39.92848272&slon=116.39560823&sname=A&did=BGVIS2&dlat=39.98848272&dlon=116.47560823&dname=B&dev=0&m=0&t=0";
-    setTimeout( function(e){ window.location.href = "baidumap://map/direction?origin=34.264642646862,108.95108518068&destination=40.007623,116.360582&mode=driving&src=yourCompanyName|yourAppName"; },200);
-	
-	
-	window.test123 = function (){
-	wx.openLocation({
-      latitude: 23.099994,
-      longitude: 113.324520,
-      name: 'TIT 创意园',
-      address: '广州市海珠区新港中路 397 号',
-      scale: 14,
-      infoUrl: 'http://weixin.qq.com'
-    });
-	}
-</script>
 </html>
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");
+	var point = new BMap.Point(116.331398,39.897445);
+	map.centerAndZoom(point,12);
+
+	function myFun(result){
+		var cityName = result.name;
+		map.setCenter(cityName);
+		alert("当前定位城市:"+cityName);
+	}
+	var myCity = new BMap.LocalCity();
+	myCity.get(myFun);
+</script>
